@@ -91,7 +91,7 @@ var han2 = new THREE.Mesh(new THREE.PlaneGeometry( 5, 4 ), new THREE.MeshBasicMa
 scene2.add(han2);
 
 var hanTexture3 = new THREE.TextureLoader().load('asset/card3.png');
-var han3 = new THREE.Mesh(new THREE.PlaneGeometry( 5, 5 ), new THREE.MeshBasicMaterial({ map: hanTexture3, transparent: true }));
+var han3 = new THREE.Mesh(new THREE.PlaneGeometry( 5, 4 ), new THREE.MeshBasicMaterial({ map: hanTexture3, transparent: true }));
 // han.material.opacity =-1;
 // han.material.opacity =-1;
 scene2.add(han3);
