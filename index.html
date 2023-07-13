@@ -1,25 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="output.css" rel="stylesheet">
+
+    <script type="module" src="/main.js"></script>
     <style>
       /* CSS */
- #canvas2 {
-  position: absolute;
-  z-index: -1;
-  overflow: hidden;
-  margin: 0;
-  background-color: black;
-}
+      #canvas2 {
+          position: absolute;
+          z-index: -1;
+          overflow: hidden;
+          margin: 0;
+          background-color: #000000;
+        }
 
 
-#form-container {
-  position: relative;
-  margin: -0.5rem;
+        #form-container {
+          position: relative;
 
-}
+
+        }
 /* CSS */
 
 
@@ -48,46 +51,44 @@
       <p>Aku ini jagoan ngoding </p>
       <h2>Tentang saya</h2>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur beatae iste hic impedit obcaecati magnam quisquam veritatis atque quibusdam laudantium, totam id quis minima, voluptates animi sint, dolores exercitationem soluta.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur beatae iste hic impedit obcaecati magnam quisquam veritatis atque quibusdam laudantium, totam id quis minima, voluptates animi sint, dolores exercitationem soluta.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur beatae iste hic impedit obcaecati magnam quisquam veritatis atque quibusdam laudantium, totam id quis minima, voluptates animi sint, dolores exercitationem soluta.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur beatae iste hic impedit obcaecati magnam quisquam veritatis atque quibusdam laudantium, totam id quis minima, voluptates animi sint, dolores exercitationem soluta.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur beatae iste hic impedit obcaecati magnam quisquam veritatis atque quibusdam laudantium, totam id quis minima, voluptates animi sint, dolores exercitationem soluta.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur beatae iste hic impedit obcaecati magnam quisquam veritatis atque quibusdam laudantium, totam id quis minima, voluptates animi sint, dolores exercitationem soluta.
-      </p>
-      <script type="module" src="/main.js"></script>
+      <p class="mb-5">
+     </p>
+
       
           <!-- Form Anda -->
-          <form id="form-container" style="display: flex; justify-content:center; align-items: start; flex-direction: column;">
+          <form id="form-container" action="Welcome/submitForm" method="post" class="flex md:justify-center justify-end md:items-start items-center flex-col">
             <canvas id="canvas2"></canvas>
-            <div style="background-color: rgba(3, 101, 130, 0.5);backdrop-filter: blur(8px);padding:2rem;border-radius: 30px;margin-left:12%;">
-              <center><h1 style="color:white;">Send Me a Massage</h1></center>
-              <div style="margin-top: 20px;">
-                <input id="inputNama" type="text" style="background-color: rgba(0, 0, 0, 0.5); font-size: 30px; margin-top: 20px;" placeholder="Nama"><br>
-                <input id="inputEmail" type="text" style="background-color: rgba(0, 0, 0, 0.5); font-size: 30px; margin-top: 20px;" placeholder="Email"><br>
-                <textarea id="inputPesan" type="text" style="background-color: rgba(0, 0, 0, 0.5); font-size: 30px; margin-top: 20px;" placeholder="Pesan"></textarea>
-                <br>
-                <center><button style="font-size: 30px; margin-top: 20px;">Submit</button></center>
+            <div class="2xl:min-h-[30rem] 2xl:max-h-[30rem] 2xl:min-w-[28rem] 2xl:max-w-[28rem]
+                  xl:min-h-[27rem] xl:max-h-[27rem] xl:min-w-[25rem] xl:max-w-[25rem]
+                  lg:min-h-[21rem] lg:max-h-[21rem] lg:min-w-[23rem] lg:max-w-[23rem]
+                  md:min-h-[21rem] md:max-h-[21rem] md:min-w-[19rem] md:max-w-[19rem]
+                  min-h-[23rem] max-h-[23rem] min-w-[18rem] max-w-[18rem]
+               bg-blue-500 p-4 sm:p-8 rounded-xl md:ml-14 lg:ml-36 xl:ml-44 2xl:ml-72 md:mb-0 sm:mb-20 mb-14" style="background-color: rgba(3, 101, 130, 0.5);backdrop-filter: blur(4px);">
+                <h1 class="text-white text-center font-Shadows-Into-Light text-xl md:text-xl lg:text-2xl xl:text-4xl font-bold">Send Me a Message</h1>
+                <div class="mt-6">
+            
+                <ul class="text-center">
+                <li><input id="inputNama" name="nama" type="text" class="w-full rounded-2xl p-2 md:p-1 lg:p-1 xl:p-3 text-center font-IBM-Plex-Sans text-white 
+                  2xl:text-3xl xl:text-xl mt-2 xl:mt-4 lg:mt-2 lg:text-xl text-xl
+                  focus:shadow-[0_0_30px_-3px_rgba(0,0,0,0.3)] focus:shadow-teal-400 focus:border-teal-400 focus:border-2 focus:outline-none"  
+                  style="background-color: rgba(0, 0, 0, 0.5);backdrop-filter: blur(2px);" placeholder="Nama" /></li>
+            
+                <li><input id="inputEmail" name="email" type="text" class="w-full rounded-2xl p-2 md:p-1 lg:p-1 xl:p-3 text-center text-white 
+                  2xl:text-3xl xl:text-xl mt-2 xl:mt-4 lg:mt-2 lg:text-xl text-xl
+                  focus:shadow-[0_0_30px_-3px_rgba(0,0,0,0.3)] focus:shadow-teal-400 focus:border-teal-400 focus:border-2 focus:outline-none" 
+                  style="background-color: rgba(0, 0, 0, 0.5);backdrop-filter: blur(2px);" placeholder="Email" /></li>
+            
+                <li><textarea id="inputPesan" name="message" class="resize-none w-full rounded-2xl p-2 md:p-1 lg:p-1 xl:p-3 text-center text-white 
+                  2xl:text-3xl xl:text-xl mt-2 xl:mt-4 lg:mt-2 lg:text-xl text-xl
+                  focus:shadow-[0_0_30px_-3px_rgba(0,0,0,0.3)] focus:shadow-teal-400 focus:border-teal-400 focus:border-2 focus:outline-none" 
+                  style="background-color: rgba(0, 0, 0, 0.5);backdrop-filter: blur(2px);" placeholder="Pesan"></textarea></li>
+                </ul>
+            
+                <div class="text-center mt-2 xl:mt-4 lg:mt-2">
+                <button class="modal-close px-8 bg-black p-3 pb-4 rounded-lg text-white hover:bg-white hover:text-black 2xl:text-3xl xl:text-xl lg:text-lg text-lg hover:shadow-[0_0_30px_-3px_rgba(0,0,0,0.3)] hover:shadow-teal-400 hover:border-teal-400 hover:border-2 hover:outline-none" name="kirim">Send</button>
+                </div>
               </div>
             </div>
           </form>
-        
   </body>
 </html>
