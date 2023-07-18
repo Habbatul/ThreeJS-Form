@@ -1,4 +1,4 @@
-- ### Ini HeroSection versi terbaru dari sebelumnya sudah menerapkan tween js dan postprocessing. banyak fitur yang ditambahkan sehingga scene threeJS lebih interaktif untuk mengingkatkan UX.
+- ### Ini adalah form dengan animasi focus input dengan ThreeJS.
 - ### Teknologi yang digunakan :
   - Vite
   - Three JS
