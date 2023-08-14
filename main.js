@@ -132,6 +132,40 @@ function myFunction(x) {
     han3.scale.x = 0.5; // Skala setengah pada sumbu x
     han3.scale.y = 0.5; // Skala setengah pada sumbu y
 
+    //Animasi besar kecil
+    // Definisikan tween animasi resize kecil
+function createAnimationTween(mesh) {
+  const smallScale = 0.4; // Ukuran kecil
+  const smallTween = new TWEEN.Tween(mesh.scale)
+      .to({ x: smallScale, y: smallScale, z: smallScale }, 1000) // Durasi 1 detik
+      .easing(TWEEN.Easing.Quadratic.Out);
+
+  const originalScale = 0.5; // Ukuran semula
+  const originalTween = new TWEEN.Tween(mesh.scale)
+      .to({ x: originalScale, y: originalScale, z: originalScale }, 1000) // Durasi 1 detik
+      .easing(TWEEN.Easing.Quadratic.In);
+
+  // Gabungkan tween-tween dalam satu urutan loop
+  smallTween.chain(originalTween);
+  originalTween.chain(smallTween);
+
+  return smallTween; // Kembalikan tween yang telah dibuat
+}
+
+// Buat tween animasi untuk setiap objek
+const hanTween = createAnimationTween(han);
+const han1Tween = createAnimationTween(han2);
+const han3Tween = createAnimationTween(han3);
+
+// Mulai animasi dengan memanggil .start() pada setiap tween
+hanTween.start();
+han1Tween.start();
+han3Tween.start();
+
+
+
+
+
         // Fungsi untuk memindahkan posisi dan rotasi kamera ke objek yang ditentukan
         function moveToTarget(targetPosition, targetRotation) {
           new TWEEN.Tween(camera.position)
@@ -191,6 +225,38 @@ function myFunction(x) {
     han3.position.x = 30;
     han3.position.y = 30;
 
+
+    //animasi jedah jedug
+    // Definisikan tween animasi resize kecil
+function createAnimationTween(mesh) {
+  const smallScale = 0.8; // Ukuran kecil
+  const smallTween = new TWEEN.Tween(mesh.scale)
+      .to({ x: smallScale, y: smallScale, z: smallScale }, 1000) // Durasi 1 detik
+      .easing(TWEEN.Easing.Quadratic.Out);
+
+  const originalScale = 1; // Ukuran semula
+  const originalTween = new TWEEN.Tween(mesh.scale)
+      .to({ x: originalScale, y: originalScale, z: originalScale }, 1000) // Durasi 1 detik
+      .easing(TWEEN.Easing.Quadratic.In);
+
+  // Gabungkan tween-tween dalam satu urutan loop
+  smallTween.chain(originalTween);
+  originalTween.chain(smallTween);
+
+  return smallTween; // Kembalikan tween yang telah dibuat
+}
+
+// Buat tween animasi untuk setiap objek
+const hanTween = createAnimationTween(han);
+const han1Tween = createAnimationTween(han2);
+const han3Tween = createAnimationTween(han3);
+
+// Mulai animasi dengan memanggil .start() pada setiap tween
+hanTween.start();
+han1Tween.start();
+han3Tween.start();
+
+    //animasi focus
     function moveToTarget(targetPosition, targetRotation) {
       new TWEEN.Tween(camera.position)
         .to(targetPosition, 800) // Durasi animasi 500 ms
@@ -250,6 +316,38 @@ function myFunction(x) {
     han3.position.x = 30;
     han3.position.y = 30;
 
+    //animasi jedag jedug
+    // Definisikan tween animasi resize kecil
+function createAnimationTween(mesh) {
+  const smallScale = 0.8; // Ukuran kecil
+  const smallTween = new TWEEN.Tween(mesh.scale)
+      .to({ x: smallScale, y: smallScale, z: smallScale }, 1000) // Durasi 1 detik
+      .easing(TWEEN.Easing.Quadratic.Out);
+
+  const originalScale = 1; // Ukuran semula
+  const originalTween = new TWEEN.Tween(mesh.scale)
+      .to({ x: originalScale, y: originalScale, z: originalScale }, 1000) // Durasi 1 detik
+      .easing(TWEEN.Easing.Quadratic.In);
+
+  // Gabungkan tween-tween dalam satu urutan loop
+  smallTween.chain(originalTween);
+  originalTween.chain(smallTween);
+
+  return smallTween; // Kembalikan tween yang telah dibuat
+}
+
+// Buat tween animasi untuk setiap objek
+const hanTween = createAnimationTween(han);
+const han1Tween = createAnimationTween(han2);
+const han3Tween = createAnimationTween(han3);
+
+// Mulai animasi dengan memanggil .start() pada setiap tween
+hanTween.start();
+han1Tween.start();
+han3Tween.start();
+
+
+    //animasi fokus
     function moveToTarget(targetPosition, targetRotation) {
       new TWEEN.Tween(camera.position)
         .to(targetPosition, 800) // Durasi animasi 500 ms
@@ -306,6 +404,37 @@ function myFunction(x) {
     han3.position.x = 30;
     han3.position.y = 30;
 
+
+//animasi jedag jedug
+    // Definisikan tween animasi resize kecil
+function createAnimationTween(mesh) {
+  const smallScale = 0.8; // Ukuran kecil
+  const smallTween = new TWEEN.Tween(mesh.scale)
+      .to({ x: smallScale, y: smallScale, z: smallScale }, 1000) // Durasi 1 detik
+      .easing(TWEEN.Easing.Quadratic.Out);
+
+  const originalScale = 1; // Ukuran semula
+  const originalTween = new TWEEN.Tween(mesh.scale)
+      .to({ x: originalScale, y: originalScale, z: originalScale }, 1000) // Durasi 1 detik
+      .easing(TWEEN.Easing.Quadratic.In);
+
+  // Gabungkan tween-tween dalam satu urutan loop
+  smallTween.chain(originalTween);
+  originalTween.chain(smallTween);
+
+  return smallTween; // Kembalikan tween yang telah dibuat
+}
+
+// Buat tween animasi untuk setiap objek
+const hanTween = createAnimationTween(han);
+const han1Tween = createAnimationTween(han2);
+const han3Tween = createAnimationTween(han3);
+
+// Mulai animasi dengan memanggil .start() pada setiap tween
+hanTween.start();
+han1Tween.start();
+han3Tween.start();
+
         // Fungsi untuk memindahkan posisi dan rotasi kamera ke objek yang ditentukan
     function moveToTarget(targetPosition, targetRotation) {
       new TWEEN.Tween(camera.position)
@@ -351,6 +480,29 @@ x.addListener(myFunction);
 
 
 
+//kondisi menghentikan animasi ketika scroll
+let isSceneVisible = false; // Set awalnya ke false karena canvas terlihat
+
+function handleScroll() {
+  const canvasElement = document.getElementById('canvas');
+  const rect = canvasElement.getBoundingClientRect();
+
+  // Menentukan apakah elemen canvas ada di luar viewport
+  if (
+    rect.bottom <= 0 ||
+    rect.top >= window.innerHeight ||
+    rect.right <= 0 ||
+    rect.left >= window.innerWidth
+  ) {
+    isSceneVisible = true;
+  } else {
+    isSceneVisible = false;
+  }
+}
+
+window.addEventListener('scroll', handleScroll);
+
+
 
 
 
@@ -362,17 +514,22 @@ function animate() {
 
 //animasi yang dilakukan 
   requestAnimationFrame(animate);
-  TWEEN.update();
-  composer.render();
 
-  //disini adalah logic untuk hover dari han
-    // Update raycaster
-  // controls.update();
-  renderer.clear();
-  composer.render();
-  renderer.render( scene, camera );
-  renderer.clearDepth();
-  renderer.render( scene2, camera );
+  if (!isSceneVisible) {
+
+    TWEEN.update();
+    composer.render();
+
+    //disini adalah logic untuk hover dari han
+      // Update raycaster
+    // controls.update();
+    renderer.clear();
+    composer.render();
+    renderer.render( scene, camera );
+    renderer.clearDepth();
+    renderer.render( scene2, camera );
+
+  }
 }
 
 animate();
