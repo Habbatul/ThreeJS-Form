@@ -484,7 +484,7 @@ x.addListener(myFunction);
 let isSceneVisible = false; // Set awalnya ke false karena canvas terlihat
 
 function handleScroll() {
-  const canvasElement = document.getElementById('canvas');
+  const canvasElement = document.getElementById('canvas2');
   const rect = canvasElement.getBoundingClientRect();
 
   // Menentukan apakah elemen canvas ada di luar viewport
