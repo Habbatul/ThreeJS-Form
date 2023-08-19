@@ -115,15 +115,15 @@ function myFunction(x) {
 
     han.position.z = 0;
     han.position.x = 0;
-    han.position.y = 0;
+    han.position.y = 0.3;
 
     han2.position.z = 0;
     han2.position.x = 30;
-    han2.position.y = 0;
+    han2.position.y = 0.3;
 
     han3.position.z = 0;
     han3.position.x = 30;
-    han3.position.y = 30;
+    han3.position.y = 30.3;
 
     han.scale.x = 0.5; // Skala setengah pada sumbu x
     han.scale.y = 0.5; // Skala setengah pada sumbu y
@@ -182,21 +182,21 @@ han3Tween.start();
         // Tangani peristiwa focus pada elemen input
         const inputNama = document.getElementById('inputNama');
         inputNama.addEventListener('focus', () => {
-          const targetPosition = { x: han.position.x, y: han.position.y-2, z: han.position.z+5 };
+          const targetPosition = { x: han.position.x, y: han.position.y-2.3, z: han.position.z+5 };
           const targetRotation = { x: han.rotation.x, y: han.rotation.y, z: han.rotation.z};
           moveToTarget(targetPosition, targetRotation);
         });
     
         const inputEmail = document.getElementById('inputEmail');
         inputEmail.addEventListener('focus', () => {
-          const targetPosition = { x: han2.position.x, y: han2.position.y-2, z: han2.position.z+5 };
+          const targetPosition = { x: han2.position.x, y: han2.position.y-2.3, z: han2.position.z+5 };
           const targetRotation = { x: han2.rotation.x, y: han2.rotation.y, z: han2.rotation.z };
           moveToTarget(targetPosition, targetRotation);
         });
     
         const inputPesan = document.getElementById('inputPesan');
         inputPesan.addEventListener('focus', () => {
-          const targetPosition = { x:han3.position.x, y:han3.position.y-2, z: han3.position.z+5 };
+          const targetPosition = { x:han3.position.x, y:han3.position.y-2.3, z: han3.position.z+5 };
           const targetRotation = { x: han3.rotation.x, y:han3.rotation.y, z: han3.rotation.z };
           moveToTarget(targetPosition, targetRotation);
         });
@@ -504,7 +504,10 @@ window.addEventListener('scroll', handleScroll);
 
 
 
-
+let clock = new THREE.Clock();
+let delta = 0;
+// 70 fps
+let interval = 1 / 60;
 
 
 
@@ -518,17 +521,22 @@ function animate() {
   if (!isSceneVisible) {
 
     TWEEN.update();
-    composer.render();
 
-    //disini adalah logic untuk hover dari han
-      // Update raycaster
-    // controls.update();
-    renderer.clear();
-    composer.render();
-    renderer.render( scene, camera );
-    renderer.clearDepth();
-    renderer.render( scene2, camera );
 
+        // controls.update();
+    delta += clock.getDelta();
+
+    if (delta  > interval) {
+      //disini adalah logic untuk hover dari han
+        // Update raycaster
+      // controls.update();
+      renderer.clear();
+      composer.render();
+      renderer.render( scene, camera );
+      renderer.clearDepth();
+      renderer.render( scene2, camera );
+    }
+    
   }
 }
 
