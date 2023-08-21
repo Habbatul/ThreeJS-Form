@@ -43,9 +43,11 @@ composer.addPass(new RenderPass(scene, camera));
 
 //tadinya pakek bloomEffect tapi karena kita akan menambahkan lampu, avatar dan juga bintang maka memakai selective
 const bloomEffect = new SelectiveBloomEffect(scene,camera,{
-  luminanceThreshold: 0,
-  intensity: 2, // Meningkatkan intensitas menjadi 2 (default: 1)
-  height: 300 // Menyesuaikan ketinggian tampilan efek Bloom
+  mipmapBlur:true,
+  radius:0.6,
+  intensity:3.4,
+  luminanceSmoothing:0,
+  luminanceThreshold:0.3
 });
 
 
@@ -532,7 +534,7 @@ function animate() {
       // controls.update();
       renderer.clear();
       composer.render();
-      renderer.render( scene, camera );
+
       renderer.clearDepth();
       renderer.render( scene2, camera );
     }
