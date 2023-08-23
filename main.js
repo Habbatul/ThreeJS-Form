@@ -61,22 +61,33 @@ bloomEffect.selection = objekDipilih;
 
 
 
+// Inisialisasi bintang-bintang
+const stars = []; // Array untuk menyimpan bintang-bintang
+const numStars = 250;
+
+// Fungsi untuk membuat bintang
 function addStar() {
-  var geometry = new THREE.SphereGeometry(0.25, 24, 24);
-  var material = new THREE.MeshStandardMaterial({ emmisive: 0xffffff });
-  var star = new THREE.Mesh(geometry, material);
+  const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+  const material = new THREE.MeshStandardMaterial({ emissive: 0xffffff });
+  const star = new THREE.Mesh(geometry, material);
 
-  var [x, y, z] = Array(3)
-    .fill()
-    .map(() => THREE.MathUtils.randFloatSpread(100));
+  const x = Math.max(Math.min(THREE.MathUtils.randFloatSpread(150), 60), -60); // Koordinat x antara -20 dan 100
+  const y =  Math.max(Math.min(THREE.MathUtils.randFloatSpread(150), 60), -60); // Koordinat y antara -5 dan 100
+  const z = Math.max(Math.min(THREE.MathUtils.randFloatSpread(100), -3), -100); // Koordinat z antara -100 dan 0
+  
+  star.position.set(x,  y, z);
 
-  // Check if z value is between -50 and 50
-  star.position.set(x, y, z);
+  const speed = THREE.MathUtils.randFloat(0.1, 0.5); // Kecepatan perubahan posisi
+
+  stars.push({ mesh: star, initialPosition: star.position.clone(), speed });
   objekDipilih.add(star);
   scene.add(star);
 }
 
-Array(200).fill().forEach(addStar);
+// Tambahkan bintang-bintang ke dalam adegan
+Array(numStars).fill().forEach(addStar);
+
+
 
 
 
@@ -524,6 +535,20 @@ function animate() {
 
     TWEEN.update();
 
+      //disini animasi untuk bintang (random)
+      const time = Date.now() * 0.001; // Waktu dalam detik
+
+      stars.forEach(starData => {
+        const { mesh, initialPosition, speed } = starData;
+    
+        // Hitung perpindahan berdasarkan waktu dan kecepatan
+        const displacement = Math.sin(time * speed) * 5; // Perubahan dalam jarak dari posisi awal
+        const newPosition = initialPosition.clone().add(new THREE.Vector3(displacement, displacement, displacement));
+    
+        mesh.position.copy(newPosition);
+      });
+     //disini akhir animasi untuk bintang (random)
+
 
         // controls.update();
     delta += clock.getDelta();
@@ -532,6 +557,7 @@ function animate() {
       //disini adalah logic untuk hover dari han
         // Update raycaster
       // controls.update();
+
       renderer.clear();
       composer.render();
 
